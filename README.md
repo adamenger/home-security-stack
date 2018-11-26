@@ -1,6 +1,6 @@
 # home security stack
 
-Getting pfsense logs into fluentd and then into humio
+Getting pfsense logs into fluentd and then into elasticsearch
 
 # setup
 
