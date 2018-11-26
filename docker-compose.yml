@@ -1,12 +1,17 @@
 ---
 version: '3.0'
 services:
-  humio:
-    container_name: humio
-    image: humio/humio
-    ports:
-      - "8080:8080"
   fluentd:
     build: . 
     ports:
       - "5140:5140/udp"
+  elasticsearch:
+    build:
+      dockerfile: Dockerfile.elasticsearch
+      context: .
+    ports:
+      - "9200:9200"
+  kibana:
+    image: docker.elastic.co/kibana/kibana:6.5.1
+    ports:
+      - "5601:5601"
